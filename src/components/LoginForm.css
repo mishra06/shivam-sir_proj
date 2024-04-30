@@ -1,4 +1,10 @@
 
+
+
+.selector{
+    display: flex;
+    align-items: flex-start;
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -10,25 +16,49 @@ html, body{
   display: grid;
   height: 100vh;
   width: 100%;
-  place-items: center;
-  background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
-}
-
-.selector{
-    display: flex;
-    align-items: flex-start;
+  /* background: linear-gradient(to right, #99004d 0%, #ff0080 100%); */
 }
 ::selection{
   background: #ff80bf;
 
 }
+
+.pages{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.left_sec{
+  width: 50%;
+  height: 100vh;
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  color: white;
+}
 .container{
-  background: #fff;
+  background: #353336;
   max-width: 350px;
   width: 100%;
-  padding: 25px 30px;
+  padding: 25px 40px;
   border-radius: 5px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.input-box > input{
+  padding: 0px 10px;
+  font-size: 18px;
+}
+
+.container form{
+  width: 100%;
+
 }
 .container form .title{
   font-size: 30px;
@@ -103,4 +133,38 @@ html, body{
 .container .option{
   font-size: 14px;
   text-align: center;
+}
+
+.right_sec{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid greenyellow; */
+ display: block;
+  
+}
+
+.side_img{
+  width: 95%;
+  height: 95%;
+  /* border: 1px solid black; */
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.side_img > img{
+  max-height: 100%;
+  max-width: 100%;
+}
+
+@media(max-width: 768px) {
+  .right_sec {
+    display: none;
+  }
+  .left_sec{
+    width: 100%;
+  }
 }
