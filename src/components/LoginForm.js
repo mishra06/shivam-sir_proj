@@ -31,7 +31,7 @@ const LoginForm = () => {
         
       
         <form onSubmit={handleSubmit}>
-        <div class="title">Login</div>
+        <div class="title selector">Login</div>
         <div className="selector">
             <select value={userType} onChange={userTypeChange}>
               <option value="admin">Admin</option>
