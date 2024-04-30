@@ -13,6 +13,11 @@ html, body{
   place-items: center;
   background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
 }
+
+.selector{
+    display: flex;
+    align-items: flex-start;
+}
 ::selection{
   background: #ff80bf;
 
