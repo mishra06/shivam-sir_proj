@@ -1,0 +1,92 @@
+.dashboard-container{
+    width: 100%;
+}
+
+.title{
+    color: gray;
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+    height: 30px;
+    border: 1px solid gray;
+    margin: 0 1.5rem;
+    border-radius: 10px;
+    padding: 0 5px;
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.newww.active{
+    background-color: rgb(192, 29, 29);
+}
+.main:hover{
+    background-color: rgb(82, 67, 67);
+    color: white;
+}
+
+.dash{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: #67b1ed;
+    border-radius: 18px 0 0 0;
+}
+
+.upper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.acdm > p{
+    margin-top: 6px;
+}
+
+.acad_inner{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: -10px;
+}
+
+.feesec > p{
+    margin-top: 6px;
+}
+
+.fee_inner{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: -10px;
+    
+}
+.log_btn{
+    margin-top: 5px;
+}
+
+.l-btn{
+    padding: 5px 15px;
+    border-radius: 05px;
+    outline: none;
+    color: black;
+    border-color: 1px solid rgb(34, 33, 33);
+}
+
+.l-btn:hover{
+    background-color: black;
+    color: white;
+}
+
+ 
+

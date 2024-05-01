@@ -1,0 +1,94 @@
+*{
+    overflow: hidden;
+}
+
+.main_admform{
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-height: 100vh; /* Set a maximum height for the container */
+    overflow-y: auto;
+
+}
+.adm_form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-height: 100vh; /* Set a maximum height for the container */
+    overflow-y: auto; /* Add vertical scrollbar when content exceeds the height */
+}
+
+.Father_sec{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Gurdin_Sec{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.Father_sec label{
+    width: 33.33%; /* Display 3 fields in a row */
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.Father_sec input,
+.adm_form select {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+ 
+.adm_form form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .adm_form label {
+    width: 33.33%; /* Display 3 fields in a row */
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  
+  .adm_form input,
+  .adm_form select {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    box-sizing: border-box;
+  }
+  
+  .submit-button-container {
+    display: flex;
+    justify-content: center;
+    /* margin-top: -35px; */
+  }
+  
+  .submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .form-content-container {
+    max-height: 70vh; /* Adjust the height as needed */
+    overflow-y: auto;
+    padding-right: 20px; /* Add some padding to the right for the scrollbar */
+  }
