@@ -1,14 +1,24 @@
+
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'; // Import useDispatch
 import './StudentSheet.css';
 import AdmissionForm from '../StudentForm/AdmissionForm';
+import { SetStudentDetails } from '../../slice/studentSlice'; // Import the action creator
 
 const StudentSheet = () => {
   const [showAdmissionForm, setShowAdmissionForm] = useState(false);
-  const AdmitionDetails = useSelector((state) => state.studentSlice.StudentDetails);
-
+  const admissionDetails = useSelector((state) => state.studentSlice.StudentDetails);
+  const dispatch = useDispatch(); // Get the dispatch function
+  console.log("dddd",admissionDetails);  
   const handleAddStudent = () => {
-    setShowAdmissionForm(true);
+    setShowAdmissionForm(!showAdmissionForm);
+  };
+
+  const handleSubmitForm = (newStudentData) => {
+    // Dispatch an action to update the student details in the Redux store
+    dispatch(SetStudentDetails(newStudentData));
+    // Hide the admission form after submission
+    setShowAdmissionForm(false);
   };
 
   return (
@@ -19,7 +29,7 @@ const StudentSheet = () => {
           Add Student
         </button>
       </div>
-      {showAdmissionForm && <AdmissionForm />}
+      {showAdmissionForm && <AdmissionForm onSubmit={handleSubmitForm} />} {/* Pass the submit handler */}
       <div className="table-container">
         <table className="excel-table">
           <thead>
@@ -34,15 +44,17 @@ const StudentSheet = () => {
             </tr>
           </thead>
           <tbody>
-            {AdmitionDetails.map((student) => (
+            {Array.isArray(admissionDetails) && admissionDetails.map((student) => (
               <tr key={student.id}>
-                <td>{student.name}</td>
-                <td>{student.email.split('@')[0]}</td>
-                <td>{student.email.split('@')[1]}</td>
-                <td>{student.id}</td>
-                <td>{student.company.name}</td>
-                <td>{student.phone}</td>
-                <td>{student.website}</td>
+                <td>
+                  {student.fname} {student.lname}
+                </td>
+                <td>{student.class}</td>
+                <td>{student.sec}</td>
+                <td>{student.rol_num}</td>
+                <td>{student.father_name} / {student.mother_name}</td>
+                <td>{student.father_phone} / {student.mother_phone}</td>
+                <td>{student.fee_status}</td>
               </tr>
             ))}
           </tbody>

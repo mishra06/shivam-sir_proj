@@ -42,7 +42,7 @@ const SideBar = () => {
                 </div> 
             </Link>
             
-            <Link to='studentlist'>
+            <Link to='studentSheet'>
                 <div className="stu main">
                     <p>Student</p>
                     <span><PiStudentBold /></span>

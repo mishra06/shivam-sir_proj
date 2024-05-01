@@ -12,7 +12,7 @@ const StudentList = () => {
         AdmitionDetails.map((info,index)=>{
             return(
                 <div key={index} className="informations">
-                    <p>{info.name}</p>
+                    <p>{info.fname}</p>
                     console.log(info.name);
                 </div>
             )
