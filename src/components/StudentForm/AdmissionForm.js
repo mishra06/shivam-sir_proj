@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./AdmissionForm.css";
 import { useNavigate } from "react-router-dom";
-// import StudentList from "../StudentList/StudentList";
 import { SetStudentDetails } from "../../slice/studentSlice";
 import { useDispatch } from "react-redux";
-// import { closeForm } from '../slice/formSlice';
+
 
 const AdmissionForm = () => {
   const [showForm, setShowForm] = useState(true);

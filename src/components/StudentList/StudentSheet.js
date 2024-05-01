@@ -1,21 +1,21 @@
 
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux'; // Import useDispatch
+import { useSelector, useDispatch } from 'react-redux'; 
 import './StudentSheet.css';
 import AdmissionForm from '../StudentForm/AdmissionForm';
-import { SetStudentDetails } from '../../slice/studentSlice'; // Import the action creator
+import { SetStudentDetails } from '../../slice/studentSlice';
 
 const StudentSheet = () => {
   const [showAdmissionForm, setShowAdmissionForm] = useState(false);
   const admissionDetails = useSelector((state) => state.studentSlice.StudentDetails);
-  const dispatch = useDispatch(); // Get the dispatch function
+  const dispatch = useDispatch(); 
   console.log("dddd",admissionDetails);  
   const handleAddStudent = () => {
     setShowAdmissionForm(!showAdmissionForm);
   };
 
   const handleSubmitForm = (newStudentData) => {
-    // Dispatch an action to update the student details in the Redux store
+   
     dispatch(SetStudentDetails(newStudentData));
     // Hide the admission form after submission
     setShowAdmissionForm(false);
@@ -29,7 +29,7 @@ const StudentSheet = () => {
           Add Student
         </button>
       </div>
-      {showAdmissionForm && <AdmissionForm onSubmit={handleSubmitForm} />} {/* Pass the submit handler */}
+      {showAdmissionForm && <AdmissionForm onSubmit={handleSubmitForm} />} 
       <div className="table-container">
         <table className="excel-table">
           <thead>
