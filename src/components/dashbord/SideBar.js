@@ -31,9 +31,9 @@ const SideBar = () => {
 
         <div className="dash">
                 <p>Dashboard</p>
-            </div>
+        </div>
        
-            <hr />
+        <hr />
         <div className="upper">
             <Link to='/dashboard'> 
                 <div className="newww main">
@@ -42,7 +42,7 @@ const SideBar = () => {
                 </div> 
             </Link>
             
-            <Link to='studentList'>
+            <Link to='studentSheet'>
                 <div className="stu main">
                     <p>Student</p>
                     <span><PiStudentBold /></span>

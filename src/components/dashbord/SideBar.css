@@ -4,6 +4,7 @@
 
 .title{
     color: gray;
+
 }
 
 .main{
@@ -48,7 +49,9 @@ a{
     gap: 10px;
 }
 
-
+.acdm{
+    text-align: center;
+}
 .acdm > p{
     margin-top: 6px;
 }
@@ -62,6 +65,10 @@ a{
 
 .feesec > p{
     margin-top: 6px;
+}
+
+.feesec{
+    text-align: center;
 }
 
 .fee_inner{
