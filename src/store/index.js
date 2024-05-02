@@ -1,12 +1,11 @@
+// store.js
+
 import { configureStore } from "@reduxjs/toolkit";
-import studentSlice from "../slice/studentSlice";
+import studentReducer from "../slice/studentSlice";
 
-const store = configureStore({
-    reducer : {
-        studentSlice,
-        
-
-    }
-})
-
-export default store;
+export default configureStore({
+  reducer: {
+    student: studentReducer,
+    // Add other reducers if any
+  },
+});

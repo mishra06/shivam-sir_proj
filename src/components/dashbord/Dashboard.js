@@ -1,7 +1,6 @@
 import React from 'react'
 import HeroSection from '../hero_section/HeroSection'
 import './Dashbord.css'
-// import StudentList from '../StudentList/StudentList'
 import StudentSheet from '../StudentList/StudentSheet'
 
 const Dashboard = () => {

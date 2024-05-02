@@ -3,22 +3,38 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'; 
 import './StudentSheet.css';
 import AdmissionForm from '../StudentForm/AdmissionForm';
-import { SetStudentDetails } from '../../slice/studentSlice';
+import { addFormData, selectFormDataArray} from "../../slice/studentSlice";
+import { deleteFormData } from "../../slice/studentSlice";
+import { MdDeleteOutline } from "react-icons/md";
 
 const StudentSheet = () => {
   const [showAdmissionForm, setShowAdmissionForm] = useState(false);
-  const admissionDetails = useSelector((state) => state.studentSlice.StudentDetails);
+  const [isHoveredIndex, setIsHoveredIndex] = useState(null);
+  // const admissionDetails = useSelector((state) => state.studentSlice.StudentDetails);
+  const formDataArray = useSelector(selectFormDataArray);
   const dispatch = useDispatch(); 
-  console.log("dddd",admissionDetails);  
+  console.log("studentSheet",formDataArray);  
   const handleAddStudent = () => {
     setShowAdmissionForm(!showAdmissionForm);
   };
 
   const handleSubmitForm = (newStudentData) => {
    
-    dispatch(SetStudentDetails(newStudentData));
+    dispatch(addFormData(newStudentData));
     // Hide the admission form after submission
     setShowAdmissionForm(false);
+  };
+
+  const handleDelete = (index) => {
+    dispatch(deleteFormData(index));
+  };
+
+  const handleMouseEnter = (index) => {
+    setIsHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHoveredIndex(null);
   };
 
   return (
@@ -44,19 +60,30 @@ const StudentSheet = () => {
             </tr>
           </thead>
           <tbody>
-            {Array.isArray(admissionDetails) && admissionDetails.map((student) => (
-              <tr key={student.id}>
-                <td>
-                  {student.fname} {student.lname}
-                </td>
-                <td>{student.class}</td>
-                <td>{student.sec}</td>
-                <td>{student.rol_num}</td>
-                <td>{student.father_name} / {student.mother_name}</td>
-                <td>{student.father_phone} / {student.mother_phone}</td>
-                <td>{student.fee_status}</td>
-              </tr>
-            ))}
+          {formDataArray && formDataArray.map((formData,index)=>{
+              return(
+                <tr 
+                  key={index}
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <td>{formData.fname} {formData.lname}</td>
+                  <td>{formData.class}</td>
+                  <td>{formData.sec}</td>
+                  <td>{formData.rol_num}</td>
+                  <td>{formData.father_name}</td>
+                  <td>{formData.father_phone}</td>
+                  <td>{formData.father_phone}</td>
+                  <td className="delete-btn-container">
+                {isHoveredIndex === index && (
+                  <button className="delete-btn" onClick={() => handleDelete(index)}>
+                    <MdDeleteOutline style={{ color: 'red' }} />
+                  </button>
+                )}
+              </td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </div>

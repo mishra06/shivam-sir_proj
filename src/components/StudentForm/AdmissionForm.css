@@ -92,3 +92,7 @@
     overflow-y: auto;
     padding-right: 20px; /* Add some padding to the right for the scrollbar */
   }
+
+  .required {
+    color: red;
+  }
