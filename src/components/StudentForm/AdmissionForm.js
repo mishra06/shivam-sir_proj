@@ -96,41 +96,24 @@ const AdmissionForm = () => {
     });
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log("Form submitted:", admissionDetail);
-  //   // Push form data as a new object into formDataArray
-  //   setFormDataArray([...formDataArray, admissionDetail]);
-  //   dispatch(addFormData(admissionDetail));
-  //   navigate("/StudentSheet");
-  //   setShowForm(false);
-  // };
-
   const handleSubmit = (e) => {
     e.preventDefault();
   
-    // Check if any required field is empty
+    
     const requiredFields = ['adm_num', 'rol_num', 'class', 'sec', 'fname', 'lname', 'gender', 'dob', 'catg', 'relig', 'cast', 'mob_num', 'email', 'Adm_num', 'student_pic', 'blood_grup', 'father_name', 'father_phone', 'father_occupation', 'father_photo', 'mother_name', 'mother_phone', 'mother_occupation', 'guardian_type'];
     const emptyFields = requiredFields.filter(field => !admissionDetail[field]);
-  
-    // If there are empty required fields, show an alert
     if (emptyFields.length > 0) {
       alert('Please fill all required fields');
       return;
     }
-  
-    // If all required fields are filled, proceed with form submission
-    console.log("Form submitted:", admissionDetail);
-    // Push form data as a new object into formDataArray
+    // console.log("Form submitted:", admissionDetail);
     setFormDataArray([...formDataArray, admissionDetail]);
     dispatch(addFormData(admissionDetail));
     navigate("/StudentSheet");
     setShowForm(false);
   };
   
-
-  console.log("typeofformDataArray);", formDataArray);
-
+  // console.log("typeofformDataArray);", formDataArray);
   const handleGuardianTypeChange = (e) => {
     setAdmissionDetail((prev) => {
       return { ...prev, guardian_type: e.target.value };

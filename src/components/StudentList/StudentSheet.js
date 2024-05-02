@@ -10,7 +10,6 @@ import { MdDeleteOutline } from "react-icons/md";
 const StudentSheet = () => {
   const [showAdmissionForm, setShowAdmissionForm] = useState(false);
   const [isHoveredIndex, setIsHoveredIndex] = useState(null);
-  // const admissionDetails = useSelector((state) => state.studentSlice.StudentDetails);
   const formDataArray = useSelector(selectFormDataArray);
   const dispatch = useDispatch(); 
   console.log("studentSheet",formDataArray);  
@@ -21,7 +20,6 @@ const StudentSheet = () => {
   const handleSubmitForm = (newStudentData) => {
    
     dispatch(addFormData(newStudentData));
-    // Hide the admission form after submission
     setShowAdmissionForm(false);
   };
 
